@@ -1,0 +1,9 @@
+<launch>
+    <!-- Start controller for flexion-->
+    <rosparam file="$(find hand_controller)/config/flex.yaml" command="load"/>
+    <node name="flex_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port pan_tilt_port
+                flex_controller"
+          output="screen"/>
+</launch>

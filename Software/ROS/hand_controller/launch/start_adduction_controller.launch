@@ -1,0 +1,9 @@
+<launch>
+    <!-- Start controller for adduction-->
+    <rosparam file="$(find hand_controller)/config/adduction.yaml" command="load"/>
+    <node name="adduction_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port pan_tilt_port
+                adduction_controller"
+          output="screen"/>
+</launch>
