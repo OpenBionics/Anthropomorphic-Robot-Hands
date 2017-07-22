@@ -1,11 +1,12 @@
 # OpenBionics - Anthropomorphic Robot Hands
-Anthropomorphic, adaptive robot hands
+
+Anthropomorphic, adaptive robot hand with bio-inspired fingers. The compliant fingers employ a metacarpophalangeal (MCP) joint design that can perform flexion/extension and adduction/abduction concurrently.
 
 ## Contents
 
 In this repository you can find:
-* CAD files for MCP actuation design
-* ROS package software for dual Dynamixel RX-28 servo motor operation 
+* CAD files of the bio-inspired finger equipped with the MCP joint design
+* ROS package software for dual operation of Dynamixel RX-28 servo motors 
 * Design optimization framework for differential mechanism parameters
 * Archive of prototype images
 
