@@ -6,7 +6,7 @@ A design optimization framework to derive optimal differential mechanism paramet
 
 In Figure 1, the design optimization parameters of the differential mechanism are presented.
 
-<img src="" width="60%" height="60%" />
+<img src="https://github.com/OpenBionics/Anthropomorphic-Robot-Hands/blob/master/Media/whiffletreeOptimization.png" width="60%" height="60%" />
 
 Figure 1. Design optimization parameters.
 
@@ -14,4 +14,4 @@ Given the actuator displacement d<sub>a</sub>, the main bar radius r<sub>m</sub>
 
 Next, we observe that for every mm of index bar length increasing and for a specific actuator displacement, we get proportional differential motion. So we construct the characteristic curve of the differential mechanism and we get the desired length of the inde bar r<sub>ir</sub> as 
 
-![equation]()
+![equation](https://github.com/OpenBionics/Anthropomorphic-Robot-Hands/blob/master/Media/equation1.png).
