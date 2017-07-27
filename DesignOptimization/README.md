@@ -15,3 +15,8 @@ Given the actuator displacement d<sub>a</sub>, the main bar radius r<sub>m</sub>
 Next, we observe that for every mm of index bar length increasing and for a specific actuator displacement, we get proportional differential motion. So we construct the characteristic curve of the differential mechanism and we get the desired length of the inde bar r<sub>ir</sub> as 
 
 ![equation](https://github.com/OpenBionics/Anthropomorphic-Robot-Hands/blob/master/Media/equation1.png).
+
+
+## Notes
+
+Please open a [GitHub issue](https://github.com/OpenBionics/Anthropomorphic-Robot-Hands/issues) if you encounter any problem.
