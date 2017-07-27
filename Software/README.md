@@ -33,5 +33,62 @@ $ chmod +x hand_controller_flex.py && chmod +x hand_controller_adduction.py && c
 ```
 
 ## Working Example
+You need to check that the USB2Dynamixel adapter is properly connected. To do so type in a terminal:
+```
+$ ls /dev/ttyUSB*
+```
+If you get ```/dev/ttyUSB0``` continue the procudre, if not check the list bellow.
+* If you get  ```/dev/ttyUSB1```, unplug all your USB devices and plug only USB2Dynamixel adapter. An alternative solution is to navigate to the main controller launch file and change the port name.
+```
+$ cd ~/hand_ws/src/hand_controller/hand_controller/launch
+$ gedit controller_hand_manager.launch
+```
+Then source the workspace again.
+```
+$ . devel/setup.bash
+```
+* If you get a permission denied error, change the permissions of the user from the home directory.
+```
+$ sudo chmod 777 /dev/ttyUSB0
+```
+
+In a new terminal run a roscore
+```
+roscore
+```
+We will set the servo motors IDs, so in a terminal type. 
+```
+$ arbotix_terminal /dev/ttyUSB0 57142 # If you use Dynamixel AX-12 the baud rate is 1000000.
+```
+From the arbotix_terminal application list the motors.
+```
+>> ls
+```
+Since we employ two servo motors you need to rearrange the IDs. Connect only the first servo motor and move its ID.
+```
+>> mv 1 2
+```
+Then connect both servo motors and list them
+```
+>> ls
+```
+You should get
+```
+   1    2 .... .... .... .... .... .... ....
+.... .... .... .... .... .... .... .... ....
+```
+Exit the arbotix terminal application (Ctrl-C) and the roscore. We are ready to start the controllers.
+```
+$ roslaunch hand_controller controller_hand_manager.launch
+```
+In a new terminal type.
+```
+$ roslaunch hand_controller start_flex_controller.launch
+$ roslaunch hand_controller start_adduction_controller.launch
+
+```
+
+
+
 
 
