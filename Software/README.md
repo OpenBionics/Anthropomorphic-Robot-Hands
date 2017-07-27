@@ -52,11 +52,11 @@ $ . devel/setup.bash
 $ sudo chmod 777 /dev/ttyUSB0
 ```
 
-In a new terminal run a roscore
+In a new terminal run a roscore.
 ```
 roscore
 ```
-We will set the servo motors IDs, so in a terminal type. 
+We will set the servo motors IDs, so run the arbotix_terminal application. 
 ```
 $ arbotix_terminal /dev/ttyUSB0 57142 # If you use Dynamixel AX-12 the baud rate is 1000000.
 ```
@@ -68,27 +68,37 @@ Since we employ two servo motors you need to rearrange the IDs. Connect only the
 ```
 >> mv 1 2
 ```
-Then connect both servo motors and list them
+Then connect both servo motors and list them.
 ```
 >> ls
 ```
-You should get
+You should get.
 ```
    1    2 .... .... .... .... .... .... ....
 .... .... .... .... .... .... .... .... ....
 ```
-Exit the arbotix terminal application (Ctrl-C) and the roscore. We are ready to start the controllers.
+Exit the arbotix terminal application (Ctrl-C) and the roscore. We are ready to start the controller manager.
 ```
 $ roslaunch hand_controller controller_hand_manager.launch
 ```
-In a new terminal type.
+In a new terminal start the controllers for each servo motor.
 ```
 $ roslaunch hand_controller start_flex_controller.launch
 $ roslaunch hand_controller start_adduction_controller.launch
-
 ```
 
+To get feedback of the servo motor status run in a terminal.
+```
+$ rosrun hand_controller hand_controller_flex.py
+```
+In a new terminal for status of the other servo motor
+```
+$ rosrun hand_controller hand_controller_adduction.py
+```
 
-
-
+We are now ready to control the servo motors.
+```
+$ rosrun hand_controller double_motor_publisher.py 1.5 1.0 # The last two numbers is the desired position of the servo motors
+```
+The last numbers represent the servo motors for flexion and abduction respectively. Note that the servo motors desired positions are absolute and in radians. Since the servo motors can rotate from 0-300<sup>o</sup> the equivalent radian angles are 0-5.235 rad. Therefore, in our working example the flex motor desired position is 57.3<sup>o</sup> and the abduction motor desired position is 85.9<sup>o</sup>.
 
