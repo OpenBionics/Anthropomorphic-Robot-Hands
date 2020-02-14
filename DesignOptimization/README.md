@@ -10,11 +10,7 @@ In Figure 1, the design optimization parameters of the differential mechanism ar
 
 Figure 1. Design optimization parameters.
 
-Given the actuator displacement d<sub>a</sub>, the main bar radius r<sub>m</sub>, the index bar radius r<sub>i</sub>, the length of tendon tendon from actuator to the main bar l<sub>m</sub> and the length of tendon tendon from the main bar to the index bar l<sub>i</sub> we get the Cartesian points (x<sub>c</sub>,y<sub>c</sub>) and (x<sub>mr</sub>,y<sub>mr</sub>). With these points we can derive the configuration of the differential mechanism. 
-
-Next, we observe that for every mm of index bar length increasing and for a specific actuator displacement, we get proportional differential motion. So we construct the characteristic curve of the differential mechanism and we get the desired length of the inde bar r<sub>ir</sub> as 
-
-![equation](https://github.com/OpenBionics/Anthropomorphic-Robot-Hands/blob/master/Media/equation1.png).
+Given the actuator displacement d<sub>a</sub>, the main bar radius r<sub>m</sub>, the index bar radius r<sub>rl</sub>, the length of tendon tendon from actuator to the main bar l<sub>m</sub>, and the length of tendon tendon from the main bar to the index bar l<sub>r</sub>, we obtain the configuration of the index bar (x<sub>r</sub>,y<sub>r</sub>) and of the main bar (x<sub>mr</sub>,y<sub>mr</sub>) by solving a nonlinear equality constraint optimization scheme. Next, we can derive the full configuration of the differential mechanism. 
 
 
 ## Notes
